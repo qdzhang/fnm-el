@@ -1,0 +1,29 @@
+* Fnm-el
+
+Fnm-el integrate Emacs with [[https://github.com/Schniz/fnm][fnm]] to manage Node.js versions.
+
+** Fnm-el does...
+
+- Setup the =PATH= environment variable.
+- Setup ~exec-path~ to contains Node.js =bin/= directories.
+
+So it will be easy to adapt this package to many other versions management tools.
+
+** Installation
+
+Install fnm separately and install some Node.js versions managed by fnm.
+
+Then put this package in your load-path and  require it:
+
+#+begin_src  elisp
+(require 'fnm)
+#+end_src
+
+** Usage
+
+The only function  is ~(fnm-set)~ . It will:
+
+- Determine whether there is a =.node-version= or =.nvmrc= in the root of
+  project. If so, use the Node.js version specified by these files.
+- Use a version from user input.
+- Use the system default Node.js version.
